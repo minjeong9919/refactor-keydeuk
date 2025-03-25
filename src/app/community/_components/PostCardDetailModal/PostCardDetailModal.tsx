@@ -170,24 +170,24 @@ export default function PostCardDetailModal({ cardId, onClose, isMine, commentCo
 
   useEffect(() => {
     // 처음에 가져온 댓글 데이터
-    queryClient.setQueryData(['infiniteCommentData'], null);
-    if (postCardListData?.data) {
-      const initialComments = postCardListData.data.comments;
+    console.log(postCardListData);
+    if (postCardListData) {
+      const initialComments = postCardListData.comments;
       const lastCommentData = initialComments[initialComments.length - 1];
       setVisibleComments(initialComments);
       setLastCommentId(lastCommentData?.id);
     }
-  }, [postCardListData, queryClient]);
+  }, [postCardListData]);
 
   if (!postCardListData) return <ModalSkeleton />;
 
-  const { data: postData, status, message } = postCardListData;
+  // const { data: postData, status, message } = postCardListData;
 
-  if (status === 'ERROR') {
-    toast.error(message);
-    onClose();
-    return null;
-  }
+  // if (status === 'ERROR') {
+  //   toast.error(message);
+  //   onClose();
+  //   return null;
+  // }
 
   const {
     content,
@@ -201,7 +201,7 @@ export default function PostCardDetailModal({ cardId, onClose, isMine, commentCo
     userImage,
     custom,
     isLiked,
-  } = postData;
+  } = postCardListData;
 
   const createdDateString = formatDateToKSTString(updatedAt);
 
@@ -274,10 +274,10 @@ export default function PostCardDetailModal({ cardId, onClose, isMine, commentCo
             </div>
             {reviewImages.length > 1 && (
               <div className={cn('unselected-image-wrapper')}>
-                {reviewImages.map((image, i: number) => (
+                {reviewImages.map((image: { id: number; imgUrl: string | null }, i: number) => (
                   <div onClick={() => handleClickThumbnail(i)} key={image.id}>
                     <Image
-                      src={image.imgUrl}
+                      src={image?.imgUrl || ''}
                       alt='키보드 이미지'
                       className={cn('images')}
                       width={48}
@@ -339,7 +339,7 @@ export default function PostCardDetailModal({ cardId, onClose, isMine, commentCo
             </div>
           </div>
         </div>
-        <Modal isOpen={isEditModalOpen} onClose={handleCloseEditModal}>
+        {/* <Modal isOpen={isEditModalOpen} onClose={handleCloseEditModal}>
           <div onClick={(e) => e.stopPropagation()}>
             <WriteEditModal
               reviewType={postData ? 'customReviewEdit' : 'customReview'}
@@ -372,7 +372,7 @@ export default function PostCardDetailModal({ cardId, onClose, isMine, commentCo
               right: () => handleClickDeleteAlertButon(),
             }}
           />
-        </div>
+        </div> */}
       </div>
     </ErrorBoundary>
   );

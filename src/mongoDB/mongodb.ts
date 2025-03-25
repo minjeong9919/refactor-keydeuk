@@ -9,6 +9,7 @@ if (!url) {
 let connectDB: Promise<MongoClient> | undefined;
 
 if (process.env.NODE_ENV === 'development') {
+  /** 개발 중 재실행을 막는다. */
   if (!global._mongo) {
     global._mongo = new MongoClient(url).connect();
   }

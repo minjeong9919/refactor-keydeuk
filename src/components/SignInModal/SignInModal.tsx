@@ -28,6 +28,7 @@ export default function SignInModal({ isOpen, onClose }: SigninModalProps) {
   const router = useRouter();
   const queryClient = useQueryClient();
   const pathname = usePathname();
+
   const { mutate: signInMutate } = useMutation({
     mutationFn: (formData: FetchSignInInfoTypes) => postSignin(formData),
     onSuccess: (response) => {
