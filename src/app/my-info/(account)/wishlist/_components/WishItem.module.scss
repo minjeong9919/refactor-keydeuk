@@ -1,0 +1,25 @@
+.item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+  gap: 2rem;
+}
+
+.info-area {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cart-delete {
+  @include flex-center;
+
+  gap: 2rem;
+}

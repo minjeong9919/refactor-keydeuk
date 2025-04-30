@@ -1,0 +1,11 @@
+.page {
+  @include flex-column(4rem);
+
+  height: 100%;
+
+  .title {
+    @include pretendard-30-700;
+
+    color: $black;
+  }
+}

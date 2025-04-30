@@ -1,0 +1,36 @@
+filters:
+  - label: 🐞 Fix
+    regexs:
+      - /^.{0,10}\bfix\b/i
+    events: [issues, pull_request]
+    targets: [title]
+
+  - label: 📄 Docs
+    regexs:
+      - /^.{0,10}\bdocs\b/i
+    events: [issues, pull_request]
+    targets: [title]
+
+  - label: 🎨 Style
+    regexs:
+      - /^.{0,10}\bstyle\b/i
+    events: [issues, pull_request]
+    targets: [title]
+
+  - label: 🔨 Refactor
+    regexs:
+      - /^.{0,10}\brefactor\b/i
+    events: [issues, pull_request]
+    targets: [title]
+
+  - label: 📬 API
+    regexs:
+      - /^.{0,10}\bapi\b/i
+    events: [issues, pull_request]
+    targets: [title]
+
+  - label: ✅ Test
+    regexs:
+      - /^.{0,10}\btest\b/i
+    events: [issues, pull_request]
+    targets: [title]

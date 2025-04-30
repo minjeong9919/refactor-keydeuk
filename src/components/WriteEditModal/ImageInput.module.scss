@@ -1,0 +1,76 @@
+.title-wrapper {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+
+  & > .title {
+    @include pretendard-20-600;
+  }
+
+  & > .sub-title {
+    @include pretendard-14-400;
+
+    color: $gray-50;
+    line-height: 2.2rem;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  height: 15.6rem;
+  margin-top: 1.2rem;
+}
+
+.label-input {
+  @include flex-center;
+
+  width: 100%;
+  height: 100%;
+  border: 0.1rem dotted $gray-40;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.input-image-input {
+  display: none;
+  width: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  min-width: 16.8rem;
+  height: 15.6rem;
+
+  & > .image {
+    border-radius: 0.8rem;
+  }
+}
+
+.delete-image-icon {
+  @include flex-center;
+
+  position: absolute;
+  top: -1.2rem;
+  right: -1.2rem;
+  border-radius: 99rem;
+  background-color: $gray-40;
+  cursor: pointer;
+}
+
+.main-image-tag {
+  @include pretendard-14-700;
+
+  position: absolute;
+  top: 0.8rem;
+  left: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 3rem;
+  background-color: $primary-20;
+  color: $primary;
+
+  & > .main-tag-text {
+    padding-top: 0.5rem;
+  }
+}

@@ -1,0 +1,9 @@
+.inner {
+  @include inner;
+}
+
+.list-section {
+  @include flex-column(11rem);
+
+  margin-bottom: 10rem;
+}

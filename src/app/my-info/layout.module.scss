@@ -1,0 +1,13 @@
+.layout {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10.6rem 12rem 11.2rem;
+  overflow: auto;
+  gap: 3.2rem;
+
+  .page {
+    width: calc(100% - 23.2rem);
+    max-width: 172rem;
+  }
+}

@@ -1,0 +1,38 @@
+.category-list {
+  @include flex-center;
+
+  gap: 1.6rem;
+}
+
+.menu-item {
+  @include flex-center;
+  @include pretendard-18-400;
+
+  width: 10rem;
+  margin-top: 2.6rem;
+  border: 0.1rem solid $primary;
+  border-radius: 30rem;
+  color: $primary;
+  white-space: nowrap;
+
+  &:first-child {
+    background-color: $primary;
+    color: $white;
+
+    & a {
+      cursor: default;
+    }
+  }
+
+  &:hover:not(:first-child) {
+    opacity: 0.9;
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.item {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}

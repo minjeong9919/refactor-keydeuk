@@ -1,0 +1,30 @@
+.star {
+  width: 1.585rem;
+  height: 1.508rem;
+}
+
+.checked {
+  color: $red-80;
+}
+
+.not-checked {
+  color: $gray-10;
+}
+
+.big {
+  width: 2.536rem;
+  height: 2.412rem;
+}
+
+.big.edit {
+  cursor: pointer;
+}
+
+.stars {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.big-stars {
+  gap: 0.5rem;
+}

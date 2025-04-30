@@ -1,0 +1,93 @@
+@mixin flex-wrapper($gap) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+.header {
+  display: flex;
+  position: sticky;
+  z-index: $zindex-fixed + 1;
+  top: 0;
+  align-items: center;
+  width: 100%;
+  background-color: $white;
+  text-decoration: none;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.wrapper {
+  @include flex-wrapper(0);
+  @include poppins-18-600;
+
+  justify-content: space-between;
+  width: 100%;
+  height: 8rem;
+  padding: 0 11rem;
+  border-bottom: 0.1rem solid $gray-10;
+  color: $gray-50;
+
+  .button:hover {
+    color: $black;
+  }
+
+  .right-wrapper {
+    @include flex-wrapper(4rem);
+
+    .logo {
+      height: 2.4rem;
+    }
+
+    .logo-icon {
+      fill: $primary;
+    }
+
+    .button-wrapper {
+      @include flex-wrapper(3.5rem);
+
+      .current-page {
+        color: $primary;
+      }
+    }
+  }
+
+  .left-wrapper {
+    @include flex-wrapper(1.8rem);
+
+    .user-icon {
+      height: 2.8rem;
+    }
+
+    .user-white {
+      fill: $primary;
+
+      path {
+        fill: $white;
+      }
+    }
+
+    .user-black {
+      fill: $white;
+
+      path {
+        fill: $black;
+      }
+    }
+  }
+}
+
+.profile-image {
+  border-radius: 100%;
+}
+
+.black {
+  border-color: $black;
+  background-color: $black;
+
+  .button:hover {
+    color: $white;
+  }
+}

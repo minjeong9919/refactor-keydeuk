@@ -1,0 +1,40 @@
+.container {
+  @include flex-column(2rem);
+
+  width: 100%;
+  cursor: pointer;
+}
+
+.keyboard-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 27rem;
+  object-fit: cover;
+
+  & > .image-count {
+    @include pretendard-16-400;
+    @include flex-center;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 6.1rem;
+    height: 6.1rem;
+    border-radius: 0.8rem 0;
+    opacity: 0.8;
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.keyboard-image {
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid $gray-20;
+  border-radius: 0.8rem;
+  object-fit: cover;
+}
+
+.title {
+  @include pretendard-18-400;
+}

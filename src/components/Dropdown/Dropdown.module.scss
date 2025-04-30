@@ -1,0 +1,75 @@
+@keyframes slide-fade-in {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dropdown {
+  position: relative;
+  z-index: 10;
+
+  .input-wrapper {
+    position: relative;
+  }
+
+  .option-box {
+    position: absolute;
+    z-index: $zindex-dropdown;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    transition:
+      max-height 0.4s ease,
+      opacity 0.4s ease;
+    border: 0.1rem solid $gray-50;
+    border-radius: 0.4rem;
+    opacity: 0;
+    background-color: $white;
+
+    &.open-xs {
+      animation: slide-fade-in 0.4s forwards;
+      opacity: 1;
+    }
+
+    &.open-other {
+      animation: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.scroll {
+      overflow-y: auto;
+    }
+  }
+}
+
+.xs {
+  width: 12rem;
+
+  .option-box {
+    top: auto;
+    right: 0.6rem;
+    width: 10rem;
+    border: 0.1rem solid $gray-20;
+  }
+}
+
+.max-height-4 {
+  max-height: calc(4rem * 4);
+}
+
+.max-height-6 {
+  max-height: calc(4rem * 6);
+}
+
+.max-height-8 {
+  max-height: calc(4rem * 8);
+}

@@ -1,0 +1,59 @@
+/* stylelint-disable */
+
+@import '../_globals';
+
+.Toastify__toast {
+  @include pretendard-20-500;
+
+  width: max-content;
+  padding: 2rem !important;
+  border-radius: 1.6rem !important;
+  box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 10%) !important;
+  cursor: default !important;
+
+  &:has(> button) {
+    padding-right: 4rem !important;
+  }
+}
+
+.Toastify__toast-container {
+  width: fit-content !important;
+}
+
+.Toastify__close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.Toastify__toast-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  border-radius: 100%;
+}
+
+.Toastify__toast-body {
+  display: flex;
+  gap: 1rem;
+}
+
+.Toastify__progress-bar-theme--light {
+  background: $primary;
+}
+
+.Toastify__toast-theme--dark {
+  background-color: $gray-50 !important;
+}
+
+.Toastify__toast--success .Toastify__toast-icon svg {
+  fill: #1ae710;
+}
+
+.Toastify__toast--error .Toastify__toast-icon svg {
+  fill: $red;
+}
+
+.Toastify__toast--warning .Toastify__toast-icon svg {
+  fill: #f8fc00;
+}

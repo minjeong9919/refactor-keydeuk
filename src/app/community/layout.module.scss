@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  height: max-content;
+  padding: 12.8rem 12rem;
+}
+
+.filter-write-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.page-name-wrapper {
+  width: 100%;
+}
+
+.page-name {
+  @include pretendard-30-700;
+
+  margin-bottom: 2rem;
+}

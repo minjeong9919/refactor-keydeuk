@@ -1,0 +1,38 @@
+.default {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+
+  .input-wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    gap: 0.8rem;
+
+    .current-length {
+      position: absolute;
+      top: 50%;
+      right: 1.6rem;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.title-current-length {
+  @include pretendard-16-400;
+
+  color: $gray-40;
+}
+
+.sm {
+  gap: 0.4rem;
+}
+
+.md {
+  gap: 0.4rem;
+}
+
+.lg {
+  gap: 1.2rem;
+}
