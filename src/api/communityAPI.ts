@@ -50,23 +50,10 @@ export const getPostDetail = async (id: number) => {
   }
 };
 
-export const getCommentsInfiniteScroll = async ({
-  communityId,
-  commentId,
-}: {
-  communityId: number;
-  commentId: number;
-}) => {
+export const getCommentsInfiniteScroll = async ({ commentId, postId }: { commentId: number; postId: number }) => {
   try {
-    const response = await fetch(`${BASE_URL}/api/v1/community/comment/${communityId}/${commentId}`, {
-      headers: {
-        'Cache-Control': 'no-cache',
-      },
-    });
+    const response = await fetch(`api/posts/${postId}/comments`);
     const data = await response.json();
-    if (!response.ok) {
-      throw new Error(data.message);
-    }
     return data;
   } catch (error) {
     throw error;

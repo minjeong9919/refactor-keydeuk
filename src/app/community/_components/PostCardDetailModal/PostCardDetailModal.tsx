@@ -88,7 +88,7 @@ export default function PostCardDetailModal({ cardId, onClose, isMine, commentCo
     isFetching: isCommentLoading,
   } = useQuery({
     queryKey: ['infiniteCommentData'],
-    queryFn: () => getCommentsInfiniteScroll({ communityId: cardId, commentId: lastCommentId }),
+    queryFn: () => getCommentsInfiniteScroll({ postId: cardId, commentId: lastCommentId }),
     enabled: false,
     initialData: null,
   });
@@ -170,7 +170,6 @@ export default function PostCardDetailModal({ cardId, onClose, isMine, commentCo
 
   useEffect(() => {
     // 처음에 가져온 댓글 데이터
-    console.log(postCardListData);
     if (postCardListData) {
       const initialComments = postCardListData.comments;
       const lastCommentData = initialComments[initialComments.length - 1];
